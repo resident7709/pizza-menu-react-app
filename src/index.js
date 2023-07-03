@@ -79,10 +79,6 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  // if (hour >= openHour && hour <= closeHour)
-  //   console.log("We're currently open!!");
-  // else console.log("We're closed now..");
-
   return (
     <footer>{new Date().toLocaleTimeString()}. React, I Love You!!😍</footer>
   );

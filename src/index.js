@@ -73,6 +73,16 @@ function Menu() {
 }
 
 function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  // if (hour >= openHour && hour <= closeHour)
+  //   console.log("We're currently open!!");
+  // else console.log("We're closed now..");
+
   return (
     <footer>{new Date().toLocaleTimeString()}. React, I Love You!!😍</footer>
   );
@@ -90,7 +100,7 @@ function Pizza() {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );

@@ -76,26 +76,15 @@ function Menu() {
     <main className="menu">
       <h2>Our menu</h2>
 
-      {numPizzas > 0 && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
           {pizzas.map(pizza => (
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
+      ) : (
+        <p>We're still working on our menu. Please comeback later..🙂</p>
       )}
-
-      {/* <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="./pizzas/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mozarella, mushrooms, and onion"
-        photoName="./pizzas/funghi.jpg"
-        price={12}
-      /> */}
     </main>
   );
 }
@@ -123,13 +112,17 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
           <p>
             We're open until {closeHour}:00. Come for visit or order online!!
           </p>
           <button className="btn">Order now</button>
         </div>
+      ) : (
+        <p>
+          We're happy welcome you between {openHour}:00 and {closeHour}:00!!
+        </p>
       )}
     </footer>
   );
